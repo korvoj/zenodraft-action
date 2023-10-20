@@ -67,7 +67,7 @@ const get_id_for_latest_version_in_collection = (sandbox, collection_id, verbose
     }
     const id = (parseInt(collection_id) + 1).toString();
     const deposition = yield deposition_show_details(sandbox, id);
-    const latest_id = deposition.links.latest.split('/').slice(-1)[0];
+    const latest_id = deposition.links.latest.split('/').slice(-3)[0];
     return latest_id;
 });
 const remove_files_from_draft = (sandbox, id, verbose = false) => __awaiter(void 0, void 0, void 0, function* () {
