@@ -31,6 +31,7 @@ export const file_delete = (sandbox, id, filename, verbose = false) => __awaiter
     }
     catch (e) {
         console.debug(response);
-        throw new Error(`Something went wrong on PUT to ${bucket}/${filename}: ${response.status} - ${response.statusText} `);
+        console.debug("File name: ", filename);
+        throw new Error(`Something went wrong on DELETE to ${bucket}/${filename}: ${response.status} - ${response.statusText} `);
     }
 });
