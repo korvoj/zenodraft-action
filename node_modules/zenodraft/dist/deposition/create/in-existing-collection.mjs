@@ -21,7 +21,7 @@ export const deposition_create_in_existing_collection = (sandbox, collection_id,
     yield helpers_validate_in_collection_value(sandbox, collection_id, verbose);
     const latest_id = yield get_id_for_latest_version_in_collection(sandbox, collection_id, verbose);
     const new_id = yield create_new_versioned_deposition(sandbox, latest_id, verbose);
-    yield remove_files_from_draft(sandbox, new_id, verbose);
+    // await remove_files_from_draft(sandbox, new_id, verbose)
     yield metadata_update(sandbox, new_id, undefined, verbose);
     return new_id;
 });
