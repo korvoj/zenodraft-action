@@ -15,7 +15,8 @@ const helpers_validate_in_collection_value = (sandbox, collection_id, verbose = 
     if (verbose) {
         console.log(`checking that the collection_id value resolves to a concept, not a version...`);
     }
-    const id = (parseInt(collection_id) + 1).toString();
+    // const id = (parseInt(collection_id) + 1).toString()
+    const id = collection_id;
     const deposition = yield details_1.deposition_show_details(sandbox, id);
     if (deposition.conceptrecid !== collection_id) {
         throw new Error('Deposition id should be a concept id.');
