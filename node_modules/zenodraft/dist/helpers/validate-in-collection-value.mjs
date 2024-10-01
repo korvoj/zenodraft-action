@@ -11,9 +11,9 @@ import { deposition_show_details } from '../deposition/show/details';
 export const helpers_validate_in_collection_value = (sandbox, collection_id, verbose = false) => __awaiter(void 0, void 0, void 0, function* () {
     if (verbose) {
         console.log(`checking that the collection_id value resolves to a concept, not a version...`);
+        console.log(`incrementing by 2...`);
     }
-    // const id = (parseInt(collection_id) + 1).toString()
-    const id = collection_id;
+    const id = (parseInt(collection_id) + 2).toString();
     const deposition = yield deposition_show_details(sandbox, id);
     if (deposition.conceptrecid !== collection_id) {
         throw new Error('Deposition id should be a concept id.');
