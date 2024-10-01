@@ -68,8 +68,9 @@ const create_new_versioned_deposition = (sandbox, latest_id, verbose = false) =>
 const get_id_for_latest_version_in_collection = (sandbox, collection_id, verbose = false) => __awaiter(void 0, void 0, void 0, function* () {
     if (verbose) {
         console.log(`getting id of the latest version in the collection...`);
+        console.log(`incrementing by 2...`);
     }
-    const id = (parseInt(collection_id) + 1).toString();
+    const id = (parseInt(collection_id) + 2).toString();
     const deposition = yield details_1.deposition_show_details(sandbox, id);
     const latest_id = deposition.links.latest.split('/').slice(-3)[0];
     return latest_id;
